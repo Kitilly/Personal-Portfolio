@@ -10,4 +10,4 @@ https://kitilly.github.io/Personal-Portfolio (GitHub Pages, `main` branch, root)
 - `assets/`: logos.
 
 Content rule: every claim must be true today. Anything in progress is labelled
-in progress. Update the GrabAm figures (dated on the page) when they change.
+in progress.
