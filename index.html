@@ -5,14 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abdul Rahman Kitilly Hassan: Founder, Siryn Technologies &amp; GrabAm</title>
 <meta name="description" content="Founder &amp; CEO of Siryn Technologies, building GrabAm, a mobile-money marketplace for Ghana, and Siryn, emergency dispatch coordination.">
+<meta property="og:type" content="profile">
 <meta property="og:title" content="Abdul Rahman Kitilly Hassan">
-<meta property="og:description" content="Founder &amp; CEO, Siryn Technologies. Building GrabAm and Siryn in Ghana.">
+<meta property="og:description" content="Founder &amp; CEO, Siryn Technologies. Building GrabAm and Siryn for Ghana.">
 <meta property="og:url" content="https://kitilly.siryntechnologies.com/">
+<meta property="og:image" content="https://kitilly.siryntechnologies.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#fbfbfc; --surface:#ffffff; --sunken:#f2f3f5; --line:#e4e6ea;
   --text:#14161a; --text2:#4a505a; --text3:#7a808b;
   --accent:#1f5f4a; --accentbg:#e6f1ec; --warn:#8a5a00; --warnbg:#fbf1dc;
+  --sirynbg:#1a1a1c;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -23,36 +34,60 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-underline-offset:3px}
-.wrap{max-width:780px;margin:0 auto;padding:0 20px}
-header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
-.kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
-h1{font-size:clamp(30px,6vw,44px);line-height:1.1;letter-spacing:-.02em;margin:10px 0 14px}
-.lede{font-size:clamp(17px,2.4vw,19px);color:var(--text2);max-width:640px}
-.meta{margin-top:18px;color:var(--text3);font-size:15px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+header.hero{padding:56px 0 30px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:22px;align-items:center}
+@media (min-width:640px){.hero-grid{grid-template-columns:150px 1fr;gap:32px}}
+.avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line),0 8px 24px rgba(0,0,0,.08)}
+@media (min-width:640px){.avatar{width:150px;height:150px}}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.08;letter-spacing:-.025em;font-weight:800;margin:8px 0 12px}
+.lede{font-size:clamp(17px,2.4vw,19px);color:var(--text2);max-width:600px}
+.meta{margin-top:10px;color:var(--text3);font-size:14.5px}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);text-decoration:none;font-weight:600;font-size:15px}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
-section{padding:44px 0;border-bottom:1px solid var(--line)}
-h2{font-size:24px;letter-spacing:-.01em;margin-bottom:6px}
-.sub{color:var(--text3);font-size:15px;margin-bottom:22px}
-h3{font-size:17px;margin:22px 0 8px}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+
+/* Proof strip */
+.proof{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:640px){.proof{grid-template-columns:repeat(3,1fr)}}
+.proof div{background:var(--sunken);border-radius:12px;padding:14px 16px}
+.proof b{display:block;font-size:15px;line-height:1.35}
+.proof span{display:block;font-size:13px;color:var(--text3);margin-top:4px;line-height:1.4}
+
+/* Ventures */
+.ventures{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:640px){.ventures{grid-template-columns:1fr 1fr}}
+.venture{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;text-decoration:none;color:var(--text);transition:border-color .15s}
+.venture:hover{border-color:var(--accent)}
+.vhead{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px}
+.venture p{color:var(--text2);font-size:15px;margin-top:12px;flex:1}
+.venture .go{margin-top:14px;font-weight:600;font-size:14.5px;color:var(--accent)}
+.sirynmark{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.18em;color:var(--text);font-size:15px}
+.sirynmark img,.sirynlogo{width:48px;height:48px;border-radius:11px;background:var(--sirynbg);display:block;flex-shrink:0}
+
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:24px;letter-spacing:-.015em;font-weight:700;margin-bottom:6px}
+.sub{color:var(--text3);font-size:14.5px;margin-bottom:20px}
+h3{font-size:16.5px;margin:22px 0 8px}
 p+p{margin-top:12px}
 ul.points{margin:10px 0 0 0;padding-left:20px}
-ul.points li{margin:6px 0;color:var(--text2)}
+ul.points li{margin:7px 0;color:var(--text2)}
 ul.points li b{color:var(--text)}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;margin-top:16px}
-.note{font-size:14px;color:var(--text3);margin-top:10px}
-.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--accentbg);color:var(--accent);vertical-align:middle}
+.note{font-size:14px;color:var(--text3);margin-top:12px}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--accentbg);color:var(--accent);white-space:nowrap}
 .pill.warn{background:var(--warnbg);color:var(--warn)}
 .controls{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
 @media (min-width:640px){.controls{grid-template-columns:1fr 1fr}}
 .ctl{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
 .ctl .t{font-weight:700;font-size:15px}
 .ctl .d{font-size:14px;color:var(--text2);margin-top:4px}
-.ctl .r{font-size:12px;color:var(--text3);margin-top:6px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .tag{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--sunken);color:var(--text2)}
 .timeline .row{display:grid;grid-template-columns:1fr;gap:2px;padding:12px 0;border-top:1px solid var(--line)}
 @media (min-width:640px){.timeline .row{grid-template-columns:170px 1fr;gap:16px}}
@@ -63,106 +98,131 @@ ul.points li b{color:var(--text)}
 .logo{height:28px;vertical-align:middle}
 .logo.dark{display:none}
 @media (prefers-color-scheme: dark){.logo.light{display:none}.logo.dark{display:inline}}
-blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 16px;color:var(--text2);font-size:17px}
-footer{padding:36px 0 56px;color:var(--text3);font-size:14px}
 .shots{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;max-width:560px}
-.shots figure{margin:0}.shots img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line,#d8dbe0);display:block}
+.shots figure{margin:0}.shots img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
 .shots figcaption{font-size:13px;color:var(--text3);margin-top:6px}
+.secthead{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.secthead h2{margin:0}
+footer{padding:28px 0 56px;color:var(--text3);font-size:13.5px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header class="hero">
-  <div class="kicker">Founder &amp; CEO · Siryn Technologies</div>
-  <h1>Abdul Rahman Kitilly Hassan</h1>
-  <p class="lede">I build products for Ghana that people can trust with their money and their safety: GrabAm, a mobile-money marketplace that holds the buyer's payment until they have the item, and Siryn, a platform for coordinating emergency response.</p>
-  <p class="meta">Accra and Tamale, Ghana</p>
+  <div class="hero-grid">
+    <img class="avatar" src="assets/kitilly.webp" alt="Abdul Rahman Kitilly Hassan" width="150" height="150">
+    <div>
+      <div class="kicker">Founder &amp; CEO · Siryn Technologies</div>
+      <h1>Abdul Rahman Kitilly Hassan</h1>
+      <p class="lede">I build products Ghanaians can trust with their money and their safety.</p>
+      <p class="meta">Accra and Tamale, Ghana</p>
+    </div>
+  </div>
   <div class="links">
-    <a class="btn primary" href="mailto:kitilly@siryntechnologies.com">Email me</a>
-    <a class="btn" href="https://wa.me/233507876458" rel="noopener">WhatsApp</a>
-    <a class="btn" href="https://grabam.com" rel="noopener">GrabAm (live)</a>
+    <a class="btn primary" href="mailto:kitilly@siryntechnologies.com"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="M3 5.5l7 5.5 7-5.5"/></svg>Email me</a>
+    <a class="btn" href="https://wa.me/233507876458" rel="noopener"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4.5 15.5l.8-2.8A6.5 6.5 0 1 1 7.6 15z"/></svg>WhatsApp</a>
     <a class="btn" href="https://www.linkedin.com/in/abdul-rahman-kitilly-hassan-595326198" rel="noopener">LinkedIn</a>
   </div>
 </header>
 
+<div class="proof">
+  <div><b>Live with real mobile-money payments</b><span>GrabAm, public since October 2026</span></div>
+  <div><b>Customer money held by a licensed provider</b><span>Moolre, licensed by the Bank of Ghana</span></div>
+  <div><b>Proposals to 5 national bodies</b><span>Police, fire, ambulance, health and the NCA, for Siryn</span></div>
+</div>
+
+<section style="border-top:none;padding-top:28px">
+  <div class="ventures">
+    <a class="venture" href="#grabam">
+      <div class="vhead"><span><img class="logo light" src="assets/GrabAm_Wordmark_light.webp" alt="GrabAm"><img class="logo dark" src="assets/GrabAm_Wordmark_dark.webp" alt="GrabAm"></span><span class="pill">Live</span></div>
+      <p>A marketplace for Ghana where the buyer's mobile money is held until they have the item. Plus GrabAm Trade, for swapping item for item.</p>
+      <span class="go">More on GrabAm ↓</span>
+    </a>
+    <a class="venture" href="#siryn">
+      <div class="vhead"><span class="sirynmark"><img src="assets/siryn-logo.webp" alt="" width="48" height="48">SIRYN</span><span class="pill warn">In development</span></div>
+      <p>Emergency dispatch coordination across Ghana's police, fire and ambulance services, built for government and institutional partners.</p>
+      <span class="go">More on Siryn ↓</span>
+    </a>
+  </div>
+</section>
+
 <section id="grabam">
   <h2><img class="logo light" src="assets/GrabAm_Wordmark_light.webp" alt="GrabAm"><img class="logo dark" src="assets/GrabAm_Wordmark_dark.webp" alt="GrabAm"></h2>
-  <p class="sub">Founder · 2026 to present · A Siryn Technologies Limited venture · <a href="https://grabam.com">grabam.com</a></p>
+  <p class="sub">Founder · 2026 to present · A Siryn Technologies Limited venture · <a href="https://grabam.com" rel="noopener">grabam.com</a></p>
 
-  <p>A peer-to-peer marketplace for students and the general public in Ghana, paid with mobile money (MTN MoMo, Telecel Cash, AT Money). The buyer's payment is held with Moolre, a payment service provider licensed by the Bank of Ghana, until the item is delivered. It also has <b>GrabAm Trade</b>, where people swap items for items with no money involved.</p>
+  <p>A peer-to-peer marketplace for students and the general public in Ghana, paid with MTN MoMo, Telecel Cash or AT Money. The buyer's payment is held with Moolre, a Bank of Ghana–licensed payment service provider, until the item is delivered. <b>GrabAm Trade</b> lets people swap items for items with no money involved.</p>
 
   <h3>What I built</h3>
   <ul class="points">
-    <li><b>The full product, without a development team:</b> React front end; Supabase (Postgres) database and access control; Vercel serverless API; Moolre payments, payouts, refunds and SMS; Cloudinary media; Resend email.</li>
-    <li><b>Marketplace mechanics:</b> held payments with seller payouts after delivery, a dispute window, refunds, a wallet, offers and counter-offers, auctions, buyer requests, and an admin and moderation panel.</li>
-    <li><b>GrabAm Trade:</b> item-for-item swaps with multi-item offers, a two-sided "we swapped" confirmation and ratings.</li>
-    <li><b>Grabby Bot:</b> an in-app AI shopping assistant that answers from the platform's own policies and data.</li>
-    <li><b>How:</b> with AI-assisted development (Claude Code). I own the architecture, the compliance decisions, and the review and testing of every change.</li>
+    <li><b>The whole product, without a development team:</b> React front end, Supabase (Postgres), Vercel serverless API, and Moolre payments, payouts, refunds and SMS.</li>
+    <li><b>Marketplace mechanics:</b> held payments released after delivery, a dispute window, refunds, a wallet, offers, auctions, and an admin and moderation panel.</li>
+    <li><b>GrabAm Trade</b> for item-for-item swaps, and <b>Grabby Bot</b>, an AI shopping assistant that answers from the platform's own policies and data.</li>
+    <li><b>How:</b> AI-assisted development (Claude Code). I own the architecture, the compliance decisions, and the review and testing of every change.</li>
   </ul>
 
   <h3>Where it is today <span class="pill">Public launch: October 2026</span></h3>
-  <p>Live with real mobile money payments, seller payouts, refunds and disputes running end to end, and GrabAm Trade open to anyone in Ghana at <a href="https://trade.grabam.com" rel="noopener">trade.grabam.com</a>. Early stage: the focus now is growing the seller base.</p>
+  <p>Live with real mobile-money payments, seller payouts, refunds and disputes running end to end, and GrabAm Trade open to anyone in Ghana at <a href="https://trade.grabam.com" rel="noopener">trade.grabam.com</a>. Early stage: the focus now is growing the seller base.</p>
   <div class="shots">
     <figure><img src="assets/grabam-buy.jpg" alt="GrabAm marketplace Buy screen" loading="lazy" width="700" height="1198"><figcaption>Marketplace: browse, bargain, pay with MoMo. Other users' names blurred.</figcaption></figure>
     <figure><img src="assets/grabam-trade.jpg" alt="GrabAm Trade home screen" loading="lazy" width="700" height="959"><figcaption>GrabAm Trade: item-for-item swaps.</figcaption></figure>
   </div>
 </section>
 
-<section id="grc">
-  <h2>Built to be trusted: the controls behind GrabAm</h2>
-  <p class="sub">Real customer money moves through GrabAm, so these run in production, not on a roadmap.</p>
-
+<section id="trust">
+  <h2>Built to be trusted</h2>
+  <p class="sub">Real customer money moves through GrabAm, so these controls run in production, not on a roadmap.</p>
   <div class="controls">
-    <div class="ctl"><div class="t">Data protection by design</div><div class="d">Privacy policy written against Ghana's Data Protection Act, 2012 (Act 843). Phone numbers, mobile money numbers and one-time codes are scrubbed from error logs before they leave the app.</div><div class="r">Privacy · data minimisation</div></div>
-    <div class="ctl"><div class="t">Least-privilege access</div><div class="d">Database access is denied by default and opened per table and per column. Every rule is tested by acting as a real user, including the cases that must be refused.</div><div class="r">Access control · testing</div></div>
-    <div class="ctl"><div class="t">Audit trail</div><div class="d">Every admin action is logged with a before and after record. Every change to the product is written up in a numbered change log: what was wrong, the evidence, what changed, and what was and wasn't verified.</div><div class="r">Accountability · change management</div></div>
-    <div class="ctl"><div class="t">Backup and recovery that's tested</div><div class="d">Nightly encrypted, off-platform database backups. A monthly drill restores a backup into a clean database and fails if any table's row count doesn't match.</div><div class="r">Business continuity</div></div>
-    <div class="ctl"><div class="t">KYC-informed onboarding</div><div class="d">Phone verification at signup, and the name on the mobile money account must match the user's name, checked on the server. Designed after researching obligations under Ghana's Anti-Money Laundering Act, 2020 (Act 1044).</div><div class="r">Identity · AML</div></div>
-    <div class="ctl"><div class="t">Consumer-protection controls</div><div class="d">Payments are held until delivery. A seller must confirm they still have the item, or the order cancels itself with a full refund. Policies are written in plain language and each rule maps to the code that enforces it.</div><div class="r">Fair dealing · policy-to-control mapping</div></div>
+    <div class="ctl"><div class="t">Data protection by design</div><div class="d">Privacy policy written against Ghana's Data Protection Act, 2012 (Act 843). Phone numbers, MoMo numbers and one-time codes are scrubbed from error logs.</div></div>
+    <div class="ctl"><div class="t">Least-privilege access</div><div class="d">Database access is denied by default and opened per table and column, and every rule is tested as a real user, including the cases that must be refused.</div></div>
+    <div class="ctl"><div class="t">Audit trail</div><div class="d">Every admin action is logged with a before-and-after record, and every product change is written up: the problem, the evidence, the fix and what was verified.</div></div>
+    <div class="ctl"><div class="t">Tested backups</div><div class="d">Nightly encrypted off-platform backups, and a monthly drill that restores one into a clean database and checks every table.</div></div>
+    <div class="ctl"><div class="t">KYC-informed onboarding</div><div class="d">Phone verification at signup, and the MoMo account name must match the user's name, checked on the server. Shaped by Ghana's Anti-Money Laundering Act, 2020 (Act 1044).</div></div>
+    <div class="ctl"><div class="t">Consumer protection</div><div class="d">Payments are held until delivery. If a seller doesn't confirm they still have the item, the order cancels itself with a full refund.</div></div>
   </div>
-  <p class="note">I also evaluated escrow licensing requirements under Ghana's Payment Systems and Services Act, 2019 (Act 987), which is why customer funds are held by a licensed payment service provider rather than by GrabAm.</p>
+  <p class="note">Customer funds are held by a licensed payment service provider, not by GrabAm, after evaluating the escrow licensing rules in Ghana's Payment Systems and Services Act, 2019 (Act 987).</p>
 </section>
 
 <section id="siryn">
-  <h2>Siryn Technologies Limited</h2>
-  <p class="sub">Founder &amp; CEO · 2025 to present · Emergency dispatch coordination for Ghana (in development) · <a href="https://siryntechnologies.com" rel="noopener">siryntechnologies.com</a></p>
-  <p>Ghana's police, fire and ambulance services each run their own dispatch. Siryn is a civic technology platform for coordinating emergency response across them, aimed at government and institutional partners.</p>
+  <div class="secthead"><img class="sirynlogo" src="assets/siryn-logo.webp" alt="" width="48" height="48"><h2>Siryn Technologies Limited</h2></div>
+  <p class="sub">Founder &amp; CEO · 2025 to present · In development · <a href="https://siryntechnologies.com" rel="noopener">siryntechnologies.com</a></p>
+  <p>Ghana's police, fire and ambulance services each run their own dispatch. Siryn is a civic technology platform for coordinating emergency response across them, built for government and institutional partners.</p>
   <ul class="points">
     <li><b>Registered the company</b> and lead it.</li>
-    <li><b>Drafted a Memorandum of Understanding</b> and formal institutional proposals addressed to the Ghana Police Service, Ghana National Fire Service, National Ambulance Service, Ministry of Health and National Communications Authority.</li>
-    <li><b>Led meeting preparation and follow-up with the National Communications Authority,</b> turning technical material into documents non-technical officials could act on.</li>
+    <li><b>Drafted a Memorandum of Understanding</b> and formal proposals addressed to the Ghana Police Service, Ghana National Fire Service, National Ambulance Service, Ministry of Health and National Communications Authority.</li>
+    <li><b>Led meeting preparation and follow-up with the National Communications Authority,</b> turning technical material into documents officials could act on.</li>
     <li><b>Drafted a patent application</b> covering the platform's core dispatch mechanism.</li>
   </ul>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="tags">
-    <span class="tag">Policy &amp; compliance writing</span><span class="tag">Data protection (Act 843)</span><span class="tag">AML / KYC research</span>
-    <span class="tag">Risk &amp; controls design</span><span class="tag">Access control (RLS)</span><span class="tag">Stakeholder &amp; institutional engagement</span>
-    <span class="tag">Proposal &amp; MoU drafting</span><span class="tag">AI-assisted development (Claude Code)</span><span class="tag">React</span><span class="tag">Supabase / Postgres</span>
-    <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Git &amp; GitHub</span><span class="tag">Vercel</span>
-  </div>
 </section>
 
 <section id="experience">
   <h2>Experience &amp; education</h2>
   <div class="timeline">
-    <div class="row"><div class="when">2026 to present</div><div class="what"><b>Founder, GrabAm</b><span>Peer-to-peer marketplace and GrabAm Trade (above).</span></div></div>
-    <div class="row"><div class="when">2025 to present</div><div class="what"><b>Founder &amp; CEO, Siryn Technologies Limited</b><span>Emergency dispatch coordination platform (above).</span></div></div>
+    <div class="row"><div class="when">2026 to present</div><div class="what"><b>Founder, GrabAm</b><span>Peer-to-peer marketplace and GrabAm Trade.</span></div></div>
+    <div class="row"><div class="when">2025 to present</div><div class="what"><b>Founder &amp; CEO, Siryn Technologies Limited</b><span>Emergency dispatch coordination platform.</span></div></div>
     <div class="row"><div class="when">Feb 2025 to Oct 2025</div><div class="what"><b>Acting Manager, Kuzembela Auto Parts Enterprise</b><span>Ran daily operations, supervised staff, and managed customer relationships and business records.</span></div></div>
-    <div class="row"><div class="when">Nov 2023 to Oct 2024</div><div class="what"><b>Administrative &amp; ICT Support Assistant, Amanase Senior High School</b><span>National Service. IT and administrative support, and keeping school records accurate.</span></div></div>
-    <div class="row"><div class="when">Sept 2022 to Nov 2022</div><div class="what"><b>Intern, Ministry of Gender, Children and Social Protection</b><span>Fieldwork on children's sexual health advocacy; collected and analysed data for policy reports.</span></div></div>
+    <div class="row"><div class="when">Nov 2023 to Oct 2024</div><div class="what"><b>Administrative &amp; ICT Support Assistant, Amanase Senior High School</b><span>National Service. IT and administrative support.</span></div></div>
+    <div class="row"><div class="when">Sept 2022 to Nov 2022</div><div class="what"><b>Intern, Ministry of Gender, Children and Social Protection</b><span>Fieldwork on children's sexual health advocacy; data collection and analysis for policy reports.</span></div></div>
     <div class="row"><div class="when">Apr 2019 to Jun 2019</div><div class="what"><b>Volunteer, Adanu Foundation (NGO), Nigeria</b><span>Fundraising, donation distribution and community health outreach.</span></div></div>
     <div class="row"><div class="when">2019 to 2023</div><div class="what"><b>BA in Humanities (Political Science &amp; Classical Studies)</b><span>University of Ghana, Legon</span></div></div>
   </div>
+  <h3>Skills</h3>
+  <div class="tags">
+    <span class="tag">Product &amp; platform building</span><span class="tag">Payments &amp; marketplace design</span><span class="tag">Compliance &amp; data protection</span>
+    <span class="tag">Risk &amp; controls design</span><span class="tag">Institutional engagement</span><span class="tag">Proposal &amp; MoU drafting</span>
+    <span class="tag">React</span><span class="tag">Supabase / Postgres</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Vercel</span><span class="tag">AI-assisted development</span>
+  </div>
 </section>
 
-<section id="contact" style="border-bottom:none">
-  <h2>Contact</h2>
-  <p><a href="mailto:kitilly@siryntechnologies.com">kitilly@siryntechnologies.com</a> · <a href="tel:+233507876458">+233 50 787 6458</a> (Call &amp; WhatsApp)</p>
-  <p><a href="https://www.linkedin.com/in/abdul-rahman-kitilly-hassan-595326198" rel="noopener">LinkedIn</a> · <a href="https://siryntechnologies.com" rel="noopener">siryntechnologies.com</a></p>
+<section id="contact">
+  <h2>Get in touch</h2>
+  <p class="sub">Partnerships, investment, or questions about GrabAm and Siryn.</p>
+  <div class="links" style="margin-top:4px">
+    <a class="btn primary" href="mailto:kitilly@siryntechnologies.com">kitilly@siryntechnologies.com</a>
+    <a class="btn" href="tel:+233507876458">+233 50 787 6458</a>
+    <a class="btn" href="https://wa.me/233507876458" rel="noopener">WhatsApp</a>
+    <a class="btn" href="https://www.linkedin.com/in/abdul-rahman-kitilly-hassan-595326198" rel="noopener">LinkedIn</a>
+  </div>
 </section>
 
 <footer>Every claim on this page is true as of October 2026; anything in progress is labelled in progress.</footer>
